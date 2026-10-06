@@ -20,4 +20,5 @@ let html=fs.readFileSync(path.join(dir,'template.html'),'utf8')
   .replace('ask Claude to refresh for a newer pull','auto-refreshes daily');
 html=html.replace('</head>','<meta http-equiv="refresh" content="900"></head>'); // reload page every 15 min to pick up new snapshots
 fs.writeFileSync(path.join(dir,'MarketingPlanReport.html'),html);
+fs.writeFileSync(path.join(dir,'index.html'),html); // Vercel/static hosts serve index.html at the site root
 console.log(`Built MarketingPlanReport.html: ${accounts.length} accounts, ${plans.length} plans, pulled ${meta.pulledAt}`);

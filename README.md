@@ -132,6 +132,7 @@ Node.js 20+ is expected (developed on v24).
 
 ```
 MarketingPlanReport.html   Generated output (committed so Vercel can serve it)
+index.html                 Identical copy of the report; served at the site root by Vercel
 template.html              React app + rules with __ACCOUNTS__ / __PLANS__ / __PULLED__ placeholders
 build.js                   template + data  ->  MarketingPlanReport.html
 merge.js                   Upserts Salesforce deltas into data/ and rebuilds
@@ -177,7 +178,7 @@ No `npm install` is needed.
 3. Enable **Vercel Authentication** (or password protection) on the project before sharing the URL.
 4. The daily refresh commits and pushes the updated `data/` and `MarketingPlanReport.html`; Vercel redeploys automatically on each push.
 
-`vercel.json` serves the report at `/`, disables caching, and sets `X-Robots-Tag: noindex`.
+The site root serves `index.html` (an identical copy written by `build.js`). `vercel.json` disables caching and sets `X-Robots-Tag: noindex`.
 
 ## Known limitations
 
