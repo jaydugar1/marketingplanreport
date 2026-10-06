@@ -1,0 +1,14 @@
+const fs=require('fs'),vm=require('vm');
+const src=fs.readFileSync(process.argv[2],'utf8');
+const a=src.indexOf('KC="'), b=src.indexOf(',LC=[',a), c=src.indexOf(',zC=[',b), d=src.indexOf('],kp={',c)+1;
+const KC=src.slice(a+4,src.indexOf('"',a+4));
+const LC=vm.runInNewContext('('+src.slice(b+4,c)+')');
+const zC=vm.runInNewContext('('+src.slice(c+4,d)+')');
+console.log({KC,accounts:LC.length,plans:zC.length});
+const tpl=src.slice(0,a)+'KC="__PULLED__",LC=__ACCOUNTS__,zC=__PLANS__'+src.slice(d);
+fs.writeFileSync('template.html',tpl);
+fs.writeFileSync('data/original-accounts.json',JSON.stringify(LC));
+fs.writeFileSync('data/original-plans.json',JSON.stringify(zC));
+const types={};LC.forEach(x=>types[x.Type]=(types[x.Type]||0)+1);console.log(types);
+const ca=LC.filter(x=>x.CCD__c==='Voluntary'&&['Bariatric','Cardiac','ENT','Gallbladder','General','Minor_General','GI_excl_colonoscopies','GYN','Hernia','Interventional_Pain','Joint_Replacement','OP_Ortho','Spine','Thyroid','Urology','Preventative_Colonoscopies','Diagnostic_Colonoscopies','Infusions'].every(k=>x[k+'__c']==='Not Covered')).length;
+console.log('cancerOnly',ca,'template bytes',tpl.length);

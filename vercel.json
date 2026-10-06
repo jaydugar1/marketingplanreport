@@ -1,0 +1,8 @@
+{
+  "cleanUrls": true,
+  "rewrites": [{ "source": "/", "destination": "/MarketingPlanReport.html" }],
+  "headers": [{ "source": "/(.*)", "headers": [
+    { "key": "Cache-Control", "value": "no-cache" },
+    { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+  ]}]
+}

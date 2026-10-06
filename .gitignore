@@ -1,0 +1,6 @@
+node_modules/
+.claude/
+# working files, regenerated each refresh
+data/delta-*.json
+data/departed-ids.json
+data/original-*.json
