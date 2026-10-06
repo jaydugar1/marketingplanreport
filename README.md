@@ -132,6 +132,7 @@ Node.js 20+ is expected (developed on v24).
 
 ```
 MarketingPlanReport.html   Generated output (committed so Vercel can serve it)
+faq.html                   Hand-written FAQ page linked from the report's FAQ button (edit directly; not generated)
 index.html                 Identical copy of the report; served at the site root by Vercel
 template.html              React app + rules with __ACCOUNTS__ / __PLANS__ / __PULLED__ placeholders
 build.js                   template + data  ->  MarketingPlanReport.html

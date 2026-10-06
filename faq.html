@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>FAQ – 2027 Account Marketing Plan Report</title>
+<style>
+  :root{--bg:#F3F1EC;--ink:#132A2E;--muted:#6B7570;--line:#DEDAD0;--accent:#B8895A;--card:#FFFFFF;--green:#3F7A5E;--red:#B5474A;--blue:#6E8FA3;--amber:#C8862F;--purple:#8A6A9E}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+  .wrap{max-width:860px;margin:0 auto;padding:24px 24px 64px}
+  .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+  .eyebrow{font-size:12px;color:var(--accent);font-weight:600;margin-bottom:4px}
+  h1{font-size:22px;margin:0}
+  .btn{display:inline-block;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:7px;padding:6px 16px;font-size:13px;font-weight:600;text-decoration:none}
+  .btn:hover{border-color:var(--ink)}
+  .intro{color:var(--muted);font-size:14px;margin:0 0 20px}
+  h2{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:28px 0 10px}
+  details{background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:10px}
+  summary{cursor:pointer;list-style:none;padding:14px 44px 14px 16px;font-weight:700;font-size:14.5px;position:relative}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:20px;font-weight:400;color:var(--accent)}
+  details[open] summary::after{content:"\2212"}
+  details[open] summary{border-bottom:1px solid var(--line)}
+  .a{padding:14px 16px 16px;font-size:14px}
+  .a p{margin:0 0 10px}.a p:last-child{margin-bottom:0}
+  .a ul,.a ol{margin:0 0 10px;padding-left:22px}.a li{margin-bottom:5px}
+  .tldr{background:var(--bg);border-left:3px solid var(--accent);border-radius:4px;padding:8px 12px;margin:0 0 12px;font-size:13.5px}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin:4px 0 12px}
+  th{text-align:left;color:var(--muted);font-weight:600;border-bottom:1px solid var(--line);padding:6px 8px}
+  td{border-bottom:1px solid var(--line);padding:6px 8px;vertical-align:top}
+  code{background:var(--bg);border-radius:4px;padding:1px 5px;font-size:12.5px}
+  .badge{display:inline-block;font-size:11.5px;font-weight:600;color:#fff;border-radius:5px;padding:2px 8px;white-space:nowrap}
+  .b-green{background:var(--green)}.b-amber{background:var(--accent)}.b-red{background:var(--red)}.b-blue{background:var(--blue)}.b-grey{background:#8F8A7E}.b-warn{background:var(--amber)}.b-purple{background:var(--purple)}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:4px 0 12px;font-size:13px}
+  .flow span.s{background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:6px 10px;font-weight:600}
+  .flow span.arr{color:var(--accent);font-weight:700}
+  .foot{color:var(--muted);font-size:12px;margin-top:28px}
+  .tools{margin:0 0 14px}.tools button{background:none;border:none;color:var(--accent);font-weight:600;font-size:13px;cursor:pointer;padding:0 14px 0 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <div>
+      <div class="eyebrow">2027 Plan Year</div>
+      <h1>Frequently Asked Questions</h1>
+    </div>
+    <a class="btn" href="./">&larr; Back to report</a>
+  </div>
+
+  <p class="intro">Plain-English answers about where the numbers in the Account Marketing Plan Report come from, how current they are, and how to read them. Click any question to expand it.</p>
+  <div class="tools"><button type="button" onclick="document.querySelectorAll('details').forEach(d=>d.open=true)">Expand all</button><button type="button" onclick="document.querySelectorAll('details').forEach(d=>d.open=false)">Collapse all</button></div>
+
+  <h2>Data &amp; freshness</h2>
+
+  <details open>
+    <summary>1. Where does the data come from?</summary>
+    <div class="a">
+      <p class="tldr"><strong>Short answer:</strong> everything comes straight from Salesforce. Nobody types numbers into this report, and no spreadsheet feeds it.</p>
+      <p>The report reads two things in Salesforce:</p>
+      <table>
+        <tr><th>Salesforce object</th><th>What it contributes</th></tr>
+        <tr><td><strong>Account</strong></td><td>The list of clients and their basics: client name, whether they are <em>Client &ndash; Live</em> or <em>Client &ndash; Implementing</em>, region (used to spot Channel Partners), a backup eligible-employee count, and the coverage details used to identify Cancer-Only clients.</td></tr>
+        <tr><td><strong>Account Marketing Plan</strong><br><span style="color:var(--muted)">(a custom Salesforce object)</span></td><td>One record per client per plan period. This is where the 2027 information lives: <strong>Client Tier</strong>, <strong>Marketing Channel &amp; Approval Status</strong>, <strong>ID Card Approval Status</strong>, <strong>Testing Program</strong>, eligible employees, and the campaign start/end dates.</td></tr>
+      </table>
+      <p>Behind the scenes, a scheduled job asks Salesforce for anything that has changed, updates a small data file, and rebuilds this page. The page itself never connects to Salesforce, so visitors do not need Salesforce access.</p>
+      <div class="flow"><span class="s">Salesforce</span><span class="arr">&rarr;</span><span class="s">Daily refresh job</span><span class="arr">&rarr;</span><span class="s">Data file</span><span class="arr">&rarr;</span><span class="s">This report</span></div>
+      <p><strong>What this means for you:</strong> if something looks wrong, the fix is almost always to correct the record in Salesforce (see question 12). The report will pick it up on the next refresh.</p>
+      <p><strong>Is Monday.com used?</strong> No. Some Salesforce fields are copied to Monday for the marketing team's workflow, but this report reads Salesforce only, so the two should agree but are not linked to each other here.</p>
+    </div>
+  </details>
+
+  <details open>
+    <summary>2. How often is it refreshed?</summary>
+    <div class="a">
+      <p class="tldr"><strong>Short answer:</strong> once a day, on weekdays, early in the morning (around 7:15 AM). Changes made in Salesforce during the day show up the next morning.</p>
+      <ul>
+        <li><strong>Monday&ndash;Friday:</strong> one refresh each morning.</li>
+        <li><strong>Weekends:</strong> no refresh. Anything changed Friday afternoon through Sunday appears Monday morning.</li>
+        <li><strong>Same-day changes:</strong> if a client approves a campaign at 2 PM and the record is updated in Salesforce, the report will still show the old status until the next morning's refresh.</li>
+        <li><strong>If a refresh is missed:</strong> the previous version stays up. It is never blank, just older. The job runs from a desktop app, so a day when the computer is off or asleep can delay it until the app is next opened.</li>
+      </ul>
+      <p><strong>What about the "page reloads itself" behavior?</strong> The page quietly reloads every 15 minutes, which is only so that a long-open browser tab picks up the latest published version. It does <em>not</em> mean the data is refreshed every 15 minutes; the underlying data only changes when the daily refresh runs.</p>
+      <p>Only records that changed since the last pull are fetched each day. After each pull, the job also compares its client and plan counts against Salesforce. If they do not match, it re-pulls everything; if they still do not match, it keeps the previous version instead of publishing something wrong.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>3. How do I know how current the numbers are?</summary>
+    <div class="a">
+      <p>Look at the top-right of the report: <strong>"Snapshot pulled &lt;date, time&gt;"</strong>. That is the moment the data was last pulled from Salesforce.</p>
+      <ul>
+        <li>Pulled this morning (weekday): normal.</li>
+        <li>Pulled yesterday morning: you are looking at yesterday's data; today's refresh has not run or published yet.</li>
+        <li>Pulled several weekdays ago: a refresh is likely failing. Let the report owner know.</li>
+      </ul>
+      <p>The time is shown in your own computer's time zone.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>4. The numbers don't match what I see in Salesforce right now. Why?</summary>
+    <div class="a">
+      <p>The most common reasons, in order of likelihood:</p>
+      <ol>
+        <li><strong>Timing.</strong> You changed the record after this morning's refresh. It will appear tomorrow.</li>
+        <li><strong>A blank counts as Pending.</strong> If a Marketing Channel, ID Card, or Testing Program field is empty in Salesforce, the report shows <span class="badge b-amber">Pending</span> (see question 8).</li>
+        <li><strong>Different grouping.</strong> The report applies rules that a Salesforce list view may not: channel partners, off-cycle plans, and Cancer-Only clients are pulled out of the Tier, Implementing and Entire BoB tabs (see question 9).</li>
+        <li><strong>Which plan record counts.</strong> A client can have several plan records (for example a 2026 one and a 2027 one). Only the 2027 plan is used (question 7).</li>
+        <li><strong>Account type.</strong> Only accounts typed <em>Client &ndash; Live</em> or <em>Client &ndash; Implementing</em> are included. A client moved to "Terming" or "Former Client" drops out.</li>
+      </ol>
+    </div>
+  </details>
+
+  <h2>Reading the report</h2>
+
+  <details>
+    <summary>5. Which clients are included?</summary>
+    <div class="a">
+      <p>Every Salesforce Account whose type is <strong>Client &ndash; Live</strong> or <strong>Client &ndash; Implementing</strong>. That list is then split into the tabs along the top (Tier 1, Tier 2, Tier 3, Entire BoB, Implementing, Cancer-Only, Channel Partners, Off-Cycle).</p>
+      <p>Prospects, disqualified accounts, terming clients and former clients are not included. There is one hand-added exception, explained in question 11.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>6. What does "No 2027 Plan" mean?</summary>
+    <div class="a">
+      <p>The client is active, but there is no 2027 Account Marketing Plan record for them in Salesforce yet. Rather than hiding these clients, the report keeps them in every count and labels their statuses <span class="badge b-grey">No 2027 Plan</span>, so you can see who still needs a plan created.</p>
+      <p>These clients also have no tier yet (tier comes from the 2027 plan), so they show up in <em>Entire BoB</em> and <em>Implementing</em> (if applicable) but not in Tier 1&ndash;3.</p>
+      <p>The "<strong>x / y have a 2027 marketing plan started</strong>" figure in the summary strip tells you how many clients in the current tab do have a plan.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>7. How does the report decide which plan record is the "2027" one?</summary>
+    <div class="a">
+      <p>A plan counts as 2027 if either:</p>
+      <ul>
+        <li>its <strong>start date</strong> falls between <strong>Nov 1, 2026</strong> and <strong>Oct 31, 2027</strong>, or</li>
+        <li>its <strong>end date</strong> falls in calendar year <strong>2027</strong>.</li>
+      </ul>
+      <p>If a client has more than one that qualifies, plans starting in that Nov 2026&ndash;Oct 2027 window win; after that, the one with the latest start date is used. This is how clients on a non-calendar plan year (for example Oct 2026&ndash;Sep 2027) are still matched to the 2027 report.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>8. What do Approved, Pending, Declined and the other statuses mean?</summary>
+    <div class="a">
+      <p>The three cards (Marketing Channel, ID Card, Testing Program) and the status badges in the table all use the values below.</p>
+      <p><strong>Marketing Channel Approval</strong></p>
+      <table>
+        <tr><th>Shown as</th><th>What's in Salesforce</th></tr>
+        <tr><td><span class="badge b-green">Approved</span></td><td>Any approved option: Approved &ndash; Email + Print, Print Only, or Email Only, <em>and</em> the Quarterly Approval versions of each. They are grouped into one bucket on purpose.</td></tr>
+        <tr><td><span class="badge b-amber">Pending</span></td><td>Pending, or left blank. No decision recorded yet.</td></tr>
+        <tr><td><span class="badge b-red">Declined</span></td><td>The client declined marketing.</td></tr>
+        <tr><td><span class="badge b-grey">No 2027 Plan</span></td><td>No 2027 plan record exists yet.</td></tr>
+      </table>
+      <p><strong>ID Card Approval</strong></p>
+      <table>
+        <tr><th>Shown as</th><th>Meaning</th></tr>
+        <tr><td><span class="badge b-green">ID Approved</span></td><td>Client approved sending ID cards to members.</td></tr>
+        <tr><td><span class="badge b-amber">Pending</span></td><td>No decision yet (or blank).</td></tr>
+        <tr><td><span class="badge b-warn">At Risk</span></td><td>Approval is in jeopardy and is being worked.</td></tr>
+        <tr><td><span class="badge b-red">Declined</span></td><td>Client declined ID cards.</td></tr>
+        <tr><td><span class="badge b-purple">Declined: Approved Alternative</span></td><td>Client declined the standard ID card but approved an alternative.</td></tr>
+      </table>
+      <p><strong>Testing Program</strong></p>
+      <table>
+        <tr><th>Shown as</th><th>Meaning</th></tr>
+        <tr><td><span class="badge b-green">Approved</span></td><td>Client has approved participating in marketing tests.</td></tr>
+        <tr><td><span class="badge b-blue">Test-by-Test Approval</span></td><td>Client wants to sign off on each test individually before it runs.</td></tr>
+        <tr><td><span class="badge b-amber">Pending</span></td><td>No decision yet (or blank).</td></tr>
+        <tr><td><span class="badge b-red">Declined</span></td><td>Client declined testing.</td></tr>
+      </table>
+      <p><strong>Important:</strong> a blank field is treated as <em>Pending</em>, not as an error. That keeps a missing entry from silently disappearing, but it also means "Pending" can include "nobody has filled this in yet."</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>9. Why is a client in one tab but not another? (How are the tabs built?)</summary>
+    <div class="a">
+      <table>
+        <tr><th>Tab</th><th>Who is in it</th></tr>
+        <tr><td><strong>Tier 1 / 2 / 3</strong></td><td>Clients whose 2027 plan has that Client Tier. Excludes Channel Partners, Off-Cycle plans and Cancer-Only clients.</td></tr>
+        <tr><td><strong>Implementing Clients</strong></td><td>Clients still being implemented. A client with a tier appears here <em>and</em> in its Tier tab; that overlap is intentional. Same exclusions as the tiers.</td></tr>
+        <tr><td><strong>Entire BoB</strong></td><td>The whole book of business, with Channel Partners, Off-Cycle and Cancer-Only clients removed.</td></tr>
+        <tr><td><strong>Cancer-Only</strong></td><td>Clients whose only covered benefit is the cancer program (see question 10). Kept separate: never in Tier, Implementing or Off-Cycle.</td></tr>
+        <tr><td><strong>Channel Partners</strong></td><td>Accounts flagged as a Channel Partner (Region = Channel Partner). No other filtering, so one can also appear under Cancer-Only or Off-Cycle.</td></tr>
+        <tr><td><strong>Off-Cycle Clients</strong></td><td>Clients whose 2027 plan starts outside the normal January cycle: start date Mar 1 &ndash; Nov 1, 2027, or Nov 1 &ndash; Dec 31, 2026. The Reason column shows the start date.</td></tr>
+      </table>
+      <p>If a client seems to be missing from Tier 1&ndash;3, the usual causes are: no 2027 plan yet (no tier), the plan is off-cycle, they are a Channel Partner, or they are Cancer-Only.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>10. What is a "Cancer-Only" client?</summary>
+    <div class="a">
+      <p>A client whose Salesforce record shows the cancer program (CCD) as <strong>Voluntary</strong> and <strong>every one</strong> of the other 18 benefit categories as <strong>Not Covered</strong> &mdash; surgery types such as bariatric, cardiac, spine, joint replacement, GI, GYN, urology and so on, plus colonoscopies and infusions.</p>
+      <p>They are shown on their own tab because the ID Card question does not apply to them (that card is hidden there) and mixing them into the tiers would distort the percentages.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>11. What does the asterisk (*) next to a client name mean?</summary>
+    <div class="a">
+      <p>It marks a <strong>manual override</strong>: a client who really is active, but whose Salesforce record is set up differently from the usual pattern, so it would not be picked up automatically. Hover the asterisk for the reason.</p>
+      <p>Today this applies to <strong>Curative</strong> (Salesforce type "Active Partner", included as a Tier 1 live client). These overrides are written into the report itself, not into Salesforce, and should be removed once the Salesforce record is corrected.</p>
+      <p>A handful of internal test accounts are also deliberately excluded from all counts.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>12. Something in the report is wrong. How do I fix it?</summary>
+    <div class="a">
+      <ol>
+        <li>Find the client in Salesforce and open its <strong>Account Marketing Plan</strong> record for 2027.</li>
+        <li>Correct the field that is wrong (tier, channel &amp; approval status, ID card status, testing program, or eligible employees).</li>
+        <li>Wait for the next morning's refresh. Check the "Snapshot pulled" time to confirm the new data is live.</li>
+      </ol>
+      <p>Do not expect edits to the report page itself to stick; the page is rebuilt from Salesforce every day. If the Salesforce data is right but the report still looks off, contact the report owner &mdash; it may be a rule that needs updating (for example, a new status option or a changed off-cycle window).</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>13. What's the difference between "% of EEs" and "# of Clients"?</summary>
+    <div class="a">
+      <ul>
+        <li><strong># of Clients</strong> counts each client once. A 300-employee company and a 300,000-employee company count the same.</li>
+        <li><strong>% of EEs</strong> weights each client by its number of <strong>eligible employees (EEs)</strong>, so large clients move the bars more. It answers "what share of the eligible population has approved?"</li>
+      </ul>
+      <p>The EE number comes from the 2027 plan record; if it is blank there, the Account's eligible-employee count is used instead. Some clients have neither. They are <strong>left out of the % of EEs math</strong> (otherwise they would count as zero) but <strong>still counted</strong> in # of Clients. The orange note in the summary strip tells you how many clients are missing an EE count in the current tab; those rows show "&mdash;" in the EEs column.</p>
+    </div>
+  </details>
+
+  <h2>Access &amp; upkeep</h2>
+
+  <details>
+    <summary>14. Who can see this, and is it safe to share?</summary>
+    <div class="a">
+      <p>The report contains client names, employee counts and approval statuses, which are internal business information. Share the link only with people who would normally have access to this information in Salesforce, and do not forward screenshots outside the company. The site is not indexed by search engines and is intended to sit behind a sign-in.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>15. How is the report built and maintained?</summary>
+    <div class="a">
+      <p>It is a single self-contained web page. A scheduled job pulls the Salesforce changes each weekday morning, merges them into a small data file, rebuilds the page, and publishes it. The grouping rules and colors are part of the page's code, which is kept in a private code repository along with a technical README and a step-by-step refresh runbook.</p>
+      <p>If you have an idea for a new tab, status, or column, or notice a rule that no longer matches how the team works, send it to the report owner.</p>
+    </div>
+  </details>
+
+  <p class="foot">This FAQ describes the report as built for the 2027 plan year. Last reviewed October 2026.</p>
+</div>
+</body>
+</html>
