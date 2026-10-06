@@ -33,6 +33,16 @@ They must equal `accounts` and `plansInWindow` from merge.js. If either differs 
 pull all rows with the same queries minus the `SystemModstamp` filter (page by Name / Id range if the connector truncates), write them to the delta files, and run `node merge.js <T0> --full`.
 Re-check counts. If they still differ, report the mismatch instead of publishing silently.
 
+## Publish (after the drift check passes)
+
+```bash
+git add data/accounts.json data/plans.json data/meta.json data/cancer-ids.json MarketingPlanReport.html
+git commit -m "Daily data refresh <pulledAt>"
+git push origin main
+```
+
+Pushing to `origin` (private repo `jaydugar1/marketingplanreport`) triggers the Vercel deploy. Skip the commit if `git status` shows no changes. Never push if the drift check failed.
+
 ## Files
 - `template.html` — original report app with data placeholders. `build.js` — fills template -> `MarketingPlanReport.html`.
 - `data/accounts.json`, `data/plans.json`, `data/meta.json` — current compact snapshot. `data/original-*.json` — 10/2/2026 seed (reference only).
