@@ -110,7 +110,8 @@ A plan record is a 2027 plan if its start date is in `[2026-11-01, 2027-11-01)`,
 ### Manual overrides
 Hard-coded in the template, not Salesforce:
 - `001VP000006VX2fYAG` (**Curative**, `Active Partner`) is forced in as `Client - Live`, `Tier 1`. Remove once the Salesforce record is corrected.
-- Excluded test/placeholder accounts: `0014x00000K2cE0AAJ`, `0014x000022IAgKAAW`, `0014x000022IAq0AAG`, `001VP00000JdtzNYAR`.
+- Excluded accounts: test/placeholders `0014x00000K2cE0AAJ`, `0014x000022IAgKAAW`, `0014x000022IAq0AAG`, `001VP00000JdtzNYAR`, and **New Mexico Public School Insurance Authority** `0014x00001l0UDUAA2` (client is terming; excluded Oct 2026).
+- Forced Cancer-Only: **NextEra Energy** `0014x00000CmE7zAAF` (will be Cancer-only for 2027; shows only in the Cancer-Only tab). Set `CO` in `template.html`.
 
 ### Calculations
 - % of EEs = sum of EEs in a bucket ÷ sum of EEs for all clients **that have an EE count**. Clients missing an EE count are excluded from % of EEs but still counted in # of Clients.
